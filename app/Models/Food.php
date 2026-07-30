@@ -12,17 +12,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 #[Fillable(['name', 'price', 'category_id'])]
-#[Hidden([])]
 class Food extends Model
 {
-    /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+    use HasFactory;
+
     protected function casts(): array
     {
         return [

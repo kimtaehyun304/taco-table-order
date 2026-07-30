@@ -21,16 +21,9 @@
         <!-- 카테고리 목록 -->
         <nav class="flex-1 p-3 space-y-1.5 overflow-y-auto">
             <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 pt-2 pb-1">LUNCH MENU</div>
-            <a href="#" class="block px-3.5 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Beef</a>
-            
-            <!-- 선택된 카테고리 -->
-            <a href="#" class="block px-3.5 py-3 rounded-xl text-sm font-bold text-blue-600 bg-blue-50 border border-blue-100 shadow-sm">Side dish</a>
-            
-            <a href="#" class="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Garnish</a>
-            <a href="#" class="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Dining</a>
-            <a href="#" class="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Alcohol</a>
-            <a href="#" class="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Wine & Champagne</a>
-            <a href="#" class="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">Beverage</a>
+            @foreach ($categories as $category)
+            <a href="#" class="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">{{$category -> name}}</a>
+            @endforeach
         </nav>
     </aside>
 

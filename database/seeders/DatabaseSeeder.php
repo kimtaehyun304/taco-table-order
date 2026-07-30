@@ -27,23 +27,17 @@ class DatabaseSeeder extends Seeder
 
         Category::insert([
             [
-                'name' => '파스타',
-                'created_at' => now(),
-                'updated_at' => now(),
+                'name' => '파스타'
             ],
             [
-                'name' => '피자',
-                'created_at' => now(),
-                'updated_at' => now(),
+                'name' => '피자'
             ],
             [
-                'name' => '음료',
-                'created_at' => now(),
-                'updated_at' => now(),
+                'name' => '음료'
             ],
         ]);
 
-        $categories = Category::pluck('id', 'name');
+        $categories = Category::pluck('category_id', 'name');
 
         Food::insert([
             // 파스타

@@ -6,27 +6,23 @@ namespace App\Models;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password'])]
-#[Hidden(['password', 'remember_token'])]
+#[Table('category')]
+#[Fillable(['name'])]
 class Category extends Model
 {
-    /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+    use HasFactory;
+
     protected function casts(): array
     {
         return [
-            'category_id' => 'number',
+            'category_id' => 'integer',
             'name' => 'string',
         ];
     }
