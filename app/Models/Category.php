@@ -11,9 +11,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'price', 'category_id'])]
-#[Hidden([])]
-class Food extends Model
+#[Fillable(['name', 'email', 'password'])]
+#[Hidden(['password', 'remember_token'])]
+class Category extends Model
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
@@ -26,12 +26,8 @@ class Food extends Model
     protected function casts(): array
     {
         return [
-            'food_id' => 'number',
+            'category_id' => 'number',
             'name' => 'string',
-            'price' => 'integer',
-            'category_id' => 'integer',
-            'created_at' => 'timestamp',
-            'updated_at' => 'timestamp',
         ];
     }
 }
