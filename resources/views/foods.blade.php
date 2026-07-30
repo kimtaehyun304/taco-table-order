@@ -14,15 +14,15 @@
     <aside class="w-60 bg-white flex flex-col border-r border-slate-200 shrink-0 shadow-sm">
         <!-- 로고 영역 -->
         <div class="p-5 border-b border-slate-100 flex items-center gap-2.5">
-            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-extrabold text-xs flex items-center justify-center shadow-sm">t'</span>
-            <span class="font-extrabold text-xl tracking-tight text-slate-900">t'order</span>
+            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white font-extrabold text-xs flex items-center justify-center shadow-sm">t</span>
+            <span class="font-extrabold text-xl tracking-tight text-slate-900">table-order</span>
         </div>
 
         <!-- 카테고리 목록 -->
         <nav class="flex-1 p-3 space-y-1.5 overflow-y-auto">
             <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 pt-2 pb-1">LUNCH MENU</div>
             @foreach ($categories as $category)
-            <a href="#" class="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">{{$category -> name}}</a>
+            <a href="?category_id={{$category -> category_id}}" class="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">{{$category -> name}}</a>
             @endforeach
         </nav>
     </aside>
@@ -31,8 +31,8 @@
     <main class="flex-1 p-6 overflow-y-auto bg-slate-50">
         <header class="mb-6 pb-3 border-b border-slate-200 flex justify-between items-end">
             <div>
-                <h2 class="text-2xl font-extrabold text-slate-900">Side dish</h2>
-                <p class="text-xs text-slate-500 mt-0.5">사이드 디시 메뉴입니다.</p>
+                <h2 class="text-2xl font-extrabold text-slate-900">{{$selectedCategory -> name}}</h2>
+                <p class="text-xs text-slate-500 mt-0.5">{{$selectedCategory -> name}} 메뉴입니다.</p>
             </div>
         </header>
 

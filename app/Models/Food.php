@@ -16,6 +16,7 @@ class Food extends Model
 {
 
     use HasFactory;
+    protected $primaryKey = 'food_id';
 
     protected function casts(): array
     {
