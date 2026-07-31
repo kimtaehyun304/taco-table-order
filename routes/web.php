@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,3 +14,4 @@ Route::get('/', function () {
 // });
 
 Route::get('/foods', [FoodController::class, 'foods']);
+Route::get('/admin', [AdminController::class, 'orders']);

@@ -25,6 +25,14 @@
             <a href="?category_id={{$category -> category_id}}" class="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">{{$category -> name}}</a>
             @endforeach
         </nav>
+
+            <!-- 관리자 페이지 버튼 -->
+         <div class="p-3 border-t border-slate-100">
+            <a href="/admin"
+            class="block w-full text-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-white bg-slate-900 hover:bg-blue-600 transition">
+                관리자 페이지
+             </a>
+        </div>
     </aside>
 
     <!-- [중앙] 음식 목록 영역 -->
