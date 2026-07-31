@@ -18,5 +18,6 @@
 * [라라벨 공식 문서 보고 설치](https://laravel.com/docs/13.x#installing-php)
 
 # 캡처
-<img width="1084" height="821" alt="Image" src="https://github.com/user-attachments/assets/eb7cfe2d-7879-48a6-b8b2-d03162d4ff49" />
+<img width="1096" height="750" alt="Image" src="https://github.com/user-attachments/assets/18f58ba2-e749-4d7d-90ba-da4c387b6a92" />
 
+<img width="983" height="353" alt="Image" src="https://github.com/user-attachments/assets/2c479906-e4ea-4bc3-a76b-86f09d17121e" />
