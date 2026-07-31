@@ -15,3 +15,4 @@ Route::get('/', function () {
 
 Route::get('/foods', [FoodController::class, 'foods']);
 Route::get('/admin', [AdminController::class, 'orders']);
+Route::post('/api/orders', [AdminController::class, 'saveOrder']);

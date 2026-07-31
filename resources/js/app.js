@@ -137,3 +137,36 @@ if (clearButton) {
         renderCart();
     });
 }
+
+document.querySelector("#order-submit").addEventListener("click", async () => {
+    const order = {
+        table_number: 1,
+        status: "ORDERED",
+        order_items: cart.map((item) => ({
+            food_id: item.id,
+            quantity: item.quantity,
+        })),
+    };
+
+    const response = await fetch("/api/orders", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: JSON.stringify(order),
+    });
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    // 주문 완료 후 장바구니 비우기
+    cart = [];
+
+    // localStorage에서도 삭제
+    localStorage.removeItem("cart");
+
+    // 화면 갱신
+    renderCart();
+});

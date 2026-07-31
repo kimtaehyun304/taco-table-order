@@ -14,15 +14,16 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id('order_id');
             $table->integer('table_number');
-            $table->enum('status', ['ORDERD', 'REFUND']);
+            $table->enum('status', ['ORDERED', 'REFUND']);
             $table->timestamp('created_at');
             $table->timestamp('updated_at');  
         });
 
-            Schema::create('order_item', function (Blueprint $table) {
+        Schema::create('order_item', function (Blueprint $table) {
             $table->id('order_item_id');
             $table->foreignId('order_id')->constrained('orders', 'order_id');
             $table->foreignId('food_id')->constrained('food', 'food_id');
+            $table->integer('quantity');
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('order_item');
     }
 };

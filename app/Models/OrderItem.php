@@ -6,18 +6,21 @@ namespace App\Models;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['order_id', 'food_id'])]
+#[Table('order_item')]
+#[Fillable(['order_id', 'food_id', 'quantity'])]
 class OrderItem extends Model
 {
 
     use HasFactory;
     protected $primaryKey = 'order_item_id';
+    public $timestamps = false;
 
     protected function casts(): array
     {

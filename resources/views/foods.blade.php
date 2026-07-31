@@ -26,12 +26,12 @@
             @endforeach
         </nav>
 
-            <!-- 관리자 페이지 버튼 -->
-         <div class="p-3 border-t border-slate-100">
+        <!-- 관리자 페이지 버튼 -->
+        <div class="p-3 border-t border-slate-100">
             <a href="/admin"
-            class="block w-full text-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-white bg-slate-900 hover:bg-blue-600 transition">
+                class="block w-full text-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-white bg-slate-900 hover:bg-blue-600 transition">
                 관리자 페이지
-             </a>
+            </a>
         </div>
     </aside>
 
@@ -68,11 +68,10 @@
 
                 <!-- 주문 버튼 -->
                 <button type="button"
-                class="add-cart w-full bg-slate-900 hover:bg-blue-600 text-white font-bold py-2.5 rounded-xl text-sm active:scale-95 transition shadow-sm"
-                data-id="{{$food->food_id}}"
-                data-name="{{$food->name}}"
-                data-price="{{$food->price}}"
-                >
+                    class="add-cart w-full bg-slate-900 hover:bg-blue-600 text-white font-bold py-2.5 rounded-xl text-sm active:scale-95 transition shadow-sm"
+                    data-id="{{$food->food_id}}"
+                    data-name="{{$food->name}}"
+                    data-price="{{$food->price}}">
                     담기
                 </button>
             </div>
@@ -111,7 +110,8 @@
                 <span class="text-sm font-medium text-slate-500">총 주문금액</span>
                 <span id="cart-total" class="text-2xl font-black text-blue-600">0원</span>
             </div>
-            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow-md transition active:scale-[0.98]">
+            <button id="order-submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow-md transition active:scale-[0.98]">
                 주문하기
             </button>
         </footer>

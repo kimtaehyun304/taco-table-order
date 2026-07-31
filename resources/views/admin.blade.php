@@ -60,7 +60,7 @@
 
                         <ul class="space-y-2">
 
-                            @foreach($order->items as $item)
+                            @foreach($order->orderItems as $item)
 
                                 <li class="flex justify-between">
 
@@ -88,7 +88,7 @@
 
                         총 금액 :
                         {{ number_format(
-                            $order->items->sum(fn($item) => $item->food->price * $item->quantity)
+                            $order->orderItems->sum(fn($item) => $item->food->price * $item->quantity)
                         ) }}원
 
                     </div>

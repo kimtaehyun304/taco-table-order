@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Enums\OrderStatus;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
@@ -26,7 +28,7 @@ class Order extends Model
         return [
             'order_id' => 'integer',
             'table_number' => 'integer',
-            'status' => 'enum',
+            'status' => OrderStatus::class,
             'created_at' => 'timestamp',
             'updated_at' => 'timestamp',
         ];

@@ -2,16 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Food;
+
 use App\Models\Order;
-use Illuminate\Http\Request;
+use App\Services\OrderService;
+use App\DTO\OrderRequest;
 
 class AdminController extends Controller
 {
- public function orders()
+
+    private OrderService $orderService;
+
+    public function __construct(OrderService $orderService)
     {
-        $orders = Order::with('order_items')->get();
+        $this->orderService = $orderService;
+    }
+
+    public function orders()
+    {
+        $orders = Order::with('orderItems')->get();
         return view('admin', compact('orders'));
+    }
+
+    //API
+    public function saveOrder(OrderRequest $request)
+    {
+        $this->orderService->save($request);
+        return response()->json([
+            'message' => '주문이 완료되었습니다.'
+        ], 200);
     }
 }
