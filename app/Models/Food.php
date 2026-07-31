@@ -21,7 +21,7 @@ class Food extends Model
     protected function casts(): array
     {
         return [
-            'food_id' => 'number',
+            'food_id' => 'integer',
             'name' => 'string',
             'price' => 'integer',
             'category_id' => 'integer',

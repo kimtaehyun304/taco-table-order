@@ -59,7 +59,12 @@
                 </div>
 
                 <!-- 주문 버튼 -->
-                <button type="button" class="w-full bg-slate-900 hover:bg-blue-600 text-white font-bold py-2.5 rounded-xl text-sm active:scale-95 transition shadow-sm">
+                <button type="button"
+                class="add-cart w-full bg-slate-900 hover:bg-blue-600 text-white font-bold py-2.5 rounded-xl text-sm active:scale-95 transition shadow-sm"
+                data-id="{{$food->food_id}}"
+                data-name="{{$food->name}}"
+                data-price="{{$food->price}}"
+                >
                     담기
                 </button>
             </div>
@@ -71,11 +76,11 @@
     <aside class="w-80 bg-white flex flex-col border-l border-slate-200 shrink-0 shadow-sm">
         <header class="p-5 border-b border-slate-100 flex justify-between items-center">
             <h2 class="font-extrabold text-lg text-slate-900">장바구니</h2>
-            <button class="text-slate-400 text-xs hover:text-slate-600 font-medium underline">전체삭제</button>
+            <button id="clear-cart" class="text-slate-400 text-xs hover:text-slate-600 font-medium underline">전체삭제</button>
         </header>
 
         <!-- 장바구니 아이템 리스트 -->
-        <div class="flex-1 p-4 space-y-3 overflow-y-auto bg-slate-50/50">
+        <div id="cart-list" class="flex-1 p-4 space-y-3 overflow-y-auto bg-slate-50/50">
             <!-- 샘플 항목 1 -->
             <div class="bg-white p-4 rounded-xl relative border border-slate-200 shadow-sm">
                 <button class="absolute top-3.5 right-3.5 text-slate-400 hover:text-slate-700 text-xs font-bold">✕</button>
@@ -96,7 +101,7 @@
         <footer class="p-5 border-t border-slate-100 bg-white">
             <div class="flex justify-between items-center mb-4">
                 <span class="text-sm font-medium text-slate-500">총 주문금액</span>
-                <span class="text-2xl font-black text-blue-600">103,000원</span>
+                <span id="cart-total" class="text-2xl font-black text-blue-600">0원</span>
             </div>
             <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow-md transition active:scale-[0.98]">
                 주문하기
